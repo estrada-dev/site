@@ -1,0 +1,25 @@
+body {
+    background-color: #121212;
+    font-family: URW Gothic;
+    color: white;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px;
+}
+
+p {
+  font-size: 16px;
+  margin-left: max(23%, 100px);
+  margin-right: max(23%, 200px);
+}
+
+h2, h3{
+  margin-left: max(23%, 100px);
+  margin-right: max(23%, 100px);
+}
+
+a {
+    color: white;
+}
