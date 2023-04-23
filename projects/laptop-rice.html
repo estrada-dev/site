@@ -1,0 +1,155 @@
+<? xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 11.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/TR/xhtml1" xml:lang="en" lang="en">
+    <head>
+        <title>Laptop Rice</title>
+        <link rel="stylesheet" href="../assets/css/blog.css"/>
+    </head>
+    <body>
+        <h1>Laptop Rice</h1>
+            <h2 id="dots">dots</h2>
+                <p>
+                    <img src="../assets/images/rice_comp.png" alt="The Rice">
+                </p>
+            <h2 id="colors">Colors</h2>
+                <p>
+                    I used <code>pywal</code> to generate this colorscheme, feel free to do the same.
+                </p>
+                <p>
+                ᐅ <a href="https://github.com/dylanaraps/pywal">pywal GitHub</a>
+                </p>
+                <p>
+<pre>
+Black:   <span style="background:#222F30">#222F30</span>
+Grey:    <span style="background:#A59D9C">#A59D9C</span>
+Red:     <span style="background:#86999B">#86999B</span>
+Green:   <span style="background:#86A78F">#86A78F</span>
+Yellow:  <span style="background:#8592A5">#8592A5</span>
+Blue:    <span style="background:#87B0AF">#87B0AF</span>
+Magenta: <span style="background:#B0A7A9">#B0A7A9</span>
+Cyan:    <span style="background:#DCBCB6">#DCBCB6</span>
+White:   <span style="background:#EDE1E0">#EDE1E0</span>
+</pre>
+                </p>
+            <h2 id="fetch-program">fetch program</h2>
+                <p>
+                    Provided is a rust crate called <code>fetch</code> with a basic template to make a hard-coded fetch program.
+                    (That's the one I used for the screenshots.)
+                    The program displays the following:
+                </p>
+<pre>
+UserName@HostName
+Distro  ~ DistroName
+Shell   ~ ShellName
+Term    ~ Terminal
+WM      ~ WindowManager
+▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅▅
+</pre>
+                <p>
+                    So simply modify the variables in the source file to fit your setup and <code>cargo build --release</code> to get the binary.
+                    (Tip: I copied the binary over to <code>./local/bin/</code>.)
+                </p>
+            <h2 id="assets">Assets</h2>
+                <h3 id="firefox-startpage">Firefox startpage</h3>
+                    <p>
+                        eject by Spogelsesmaskinen.
+                    </p>
+                    <p>
+                        ᐅ <a href="https://twitter.com/spogelsemaskine/status/1607752472331689991">eject</a>
+                        <br />
+                        ᐅ <a href="https://twitter.com/spogelsemaskine">Spogelsesmankinen Twitter profile</a>
+                    </p>
+                <h3 id="wallpaper">Wallpaper</h3>
+                    <p>
+                        Could not find the original artist for the background but I found this wallhaven post with a pretty high res version saved.
+                    </p>
+                    <p>
+                        ᐅ <a href="https://whvn.cc/yxqj6l">https://whvn.cc/yxqj6l</a>
+            <h2 id="firefox-startpage">firefox startpage</h2>
+                <h3 id="startpage">Startpage</h3>
+                    <p>
+
+                    <strong><em>WARNING:</em></strong> <em><strong>do not</strong> apply this without considering the vulnerabilities it opens up.</em>
+                    </p>
+                    <p>
+                        ᐅ <a href="https://www.mozilla.org/en-US/security/advisories/mfsa2019-21/#CVE-2019-11730">See this CVE</a>
+                    </p>
+                <p>
+                    I copied most of what's in this:
+                    (I added the lil' gif at the side and changed some of the website links.)
+                </p>
+                <p>
+                    ᐅ <a href="https://github.com/okitavera/vimstart">https://github.com/okitavera/vimstart</a>
+                </p>
+                <p>
+                    In order to have this work you will have to let firefox to be able to view <code>file://</code> from within a locally hosted html file.
+                    I'm guessing you could get around having to disable these security policies by locally hosting the html but I'm not quite there yet...
+                </p>
+                <p>
+                    Provided is a user.js inside <code>.mozilla/firefox/default-release</code> with the necessary changes to make.
+                    More specifically, these three lines (as documented in mozillazine):</p>
+<pre>
+user_pref("capability.policy.policynames", "localfilelinks");
+user_pref("capability.policy.localfilelinks.sites", "file://");
+user_pref("capability.policy.localfilelinks.checkloaduri.enabled", "allAccess");
+</pre>
+                <p>
+                    ᐅ <a href="https://kb.mozillazine.org/Links_to_local_pages_do_not_work">mozillazine</a>
+                </p>
+                <p>
+                    Additionally, if you are running the latest version of firefox <strong>(hopefully)</strong>:
+                    Toggle <code>security.fileuri.strict_origin_policy</code> to <code>false</code> in your <code>about:config</code> page.
+                </p>
+            <h3 id="other-firefox-css-tweaks">Other Firefox css tweaks</h3>
+                <p>
+                    I copied <code>color_variable_template</code> and <code>autohide_tabstoolbar</code> templates from this incredible firefox css website:
+                </p>
+                <p>
+                    ᐅ <a href="https://mrotherguy.github.io/firefox-csshacks/">https://mrotherguy.github.io/firefox-csshacks/</a>
+                </p>
+                <p>
+                    The <code>userChrome.css</code> provided under <code>.mozilla/firefox/default-release/chrome</code> already has these css patches applied and should be placed inside the <code>chrome</code> directory that <em>you</em> have to make inside your firefox local directory.
+                    Your firefox local directory can be found in <code>about:profiles</code>.</p>
+        <h2 id="vim">Vim</h2>
+            <p>
+                I did not theme much of what's on my vim other than enabling a couple options.
+                Most of it (but basically all of it) comes from the amazing team over at AstroNvim.
+                Additionally, my nvim version is <code>0.8.0</code> and was installed through bob-nvim.
+            </p>
+            <p>
+                ᐅ <a href="https://github.com/AstroNvim/AstroNvim">AstroNvim GitHub</a>
+                <br />
+                ᐅ <a href="https://crates.io/crates/bob-nvim">bob-nvim</a></li>
+            </p>
+        <h2 id="shell">shell</h2>
+            <p>
+                As seen in my screenshot I am using nushell.
+                A new type of shell that deals with data instead of simple text streams.
+                Very interesting and fast out of the box (even on my 2008 hardware).
+                <strong>NOTE</strong> I have a bunch of aliases at the end of my nushell config file that replace most of the gnu coreutils with rust implementations of each.
+            </p>
+            <p>
+                ᐅ <a href="https://www.nushell.sh/">nushell Website</a>
+                <br />
+                ᐅ <a href="https://github.com/uutils/coreutils">UUtils GitHub</a>
+            </p>
+        <h2 id="sway">Sway</h2>
+            <h3 id="i-am-not-using-the-upstream-sway-">I am not using the upstream sway.</h3>
+                <p>
+                    I am using swayfx.
+                    A fork of sway that adds corners, shadows and active/inactive dim.
+                    That means that the options under the swayfx area in my sway config will most definitely give you errors when launching the upstream sway istead of swayfx sway.
+                </p>
+                <p>
+                    ᐅ <a href="https://github.com/WillPower3309/swayfx">swayfx GitHub</a>
+                </p>
+            <h3 id="dvorak">dvorak</h3>
+                <p>
+                    <strong><em>IMPORTANT</em></strong>
+                    My keybinds and input layout in sway are set to a dvorak keyboard.
+                    So if you are using a normal qwerty keyboard remember to change the layout back to normal in the sway config and possibly change the sway keybinds around in the keymap config.</p>
+
+    </body>
+</html>
